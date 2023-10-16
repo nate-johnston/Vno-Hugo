@@ -29,7 +29,48 @@
         <span class="label">Twitter</span>
       </a>
     </li>
+ 
+    {{ if  .Site.Params.social.facebook }}
+    <!-- FaceBook -->
+    <li class="navigation__item">
+      <a href="https://www.facebook.com/groups/{{ .Site.Params.social.facebook}}" title="@{{ .Site.Params.social.facebook}}" target="_blank">
+        <i class='social fa fa-facebook'></i>
+        <span class="label">Facebook</span>
+      </a>
+    </li>
     {{ end }}
+  
+    {{ if  .Site.Params.social.gplus }}
+    <!-- Google Plus -->
+    <li class="navigation__item">
+      <a href="https://plus.google.com/{{ .Site.Params.social.gplus}}" rel="author" title="Google+" target="_blank">
+        <i class='social fa fa-google-plus-square'></i>
+        <span class="label">Google Plus</span>
+      </a>
+    </li>
+    {{ end }}
+  
+    <!-- RSS -->
+    <li class="navigation__item">
+      <a href="/index.xml" rel="author" title="RSS" target="_blank">
+        <i class='social fa fa-rss'></i>
+        <span class="label">RSS</span>
+      </a>
+    </li>
+  
+    {{ if  .Site.Params.social.mail }}
+    <!-- Email -->
+    <li class="navigation__item">
+      <a href="mailto:{{ .Site.Params.social.mail}}" title="Contact me">
+        <i class='social fa fa-envelope'></i>
+        <span class="label">Email</span>
+      </a>
+    </li>
+    {{ end }}
+  
+    </ul>
+  </nav>
+     {{ end }}
 
     {{ if  .Site.Params.social.linkedin }}
     <!-- Linkedin -->
