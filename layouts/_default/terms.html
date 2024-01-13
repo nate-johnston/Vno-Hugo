@@ -25,7 +25,7 @@
             </li>
             <ul>
                 {{ range .Pages | first 5 }}
-                <li class="term-enum">{{ .Date.Format "2006-01-02" }}
+                <li class="term-enum">{{ if not .Date.IsZero }}{{ .Date.Format "2006-01-02" }}{{ end }}
                      <a class="term-title" href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
                 {{ end }}
