@@ -6,6 +6,6 @@
     {{end}}
     <span class="pagination__page-number">{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
     {{ if .Paginator.HasNext }}
-        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="{{ .Paginator.Next.URL }}">newer posts &rarr;</a>
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="{{ .Paginator.Next.URL }}">older posts &rarr;</a>
     {{end}}
 </nav>
