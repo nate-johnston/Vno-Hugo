@@ -10,7 +10,9 @@
                 <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700 " }}" class="post-list__meta--date date">{{ .Date.Format "2006-01-02" }}</time>
                 {{ end }}
                 {{ with .Params.tags }} <span class="post-list__meta--tags tags"> {{ range . }}  • <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> {{ end }} </span> {{ end }}
+                {{ if .Truncated }}
                 <a class="btn-border-small" href={{ .RelPermalink }}>{{ T "continue" }}</a></div>
+                {{ end }}
             <hr class="post-list__divider" />
         </li>
         {{ end }}

@@ -7,7 +7,9 @@
         <div class="post-list__meta">
             <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 -0700" }}" class="post-list__meta--date date">{{ .Next.Date.Format "2006-01-02" }}</time>
             {{ with .Next.Params.tags }} <span class="post-list__meta--tags tags"> {{ range . }}  • <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> {{ end }} </span> {{ end }}
+            {{ if .Next.Truncated }}
             <a class="btn-border-small" href="{{ .Next.RelPermalink }}">{{ T "continue" }}</a>
+            {{ end }}
         </div>
     </div>
     {{ end }}
@@ -25,7 +27,9 @@
                 {{ range . }}  • <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> {{ end }} 
             </span>
             {{ end }}
+            {{ if .Prev.Truncated }}
             <a class="btn-border-small" href="{{ .Prev.RelPermalink }}">{{ T "continue" }}</a>
+            {{ end }}
         </div>
     </div>
     {{ end }}
